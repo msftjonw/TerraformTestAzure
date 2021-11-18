@@ -43,9 +43,9 @@ resource "azurerm_subnet" "sn" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-# Create our Azure Storage Account - SA-AzureDevOps1
+# Create our Azure Storage Account - saazuredevops1
 resource "azurerm_storage_account" "sa" {
-  name                     = "SA-AzureDevOps1"
+  name                     = "saazuredevops1"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
