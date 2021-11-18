@@ -1,5 +1,9 @@
 terraform {
   
+  required_providers {
+    azurerm = "2.52.0"
+  }
+  
   backend "azurerm" {
     resource_group_name  = "jonnychipz-infra"
     storage_account_name = "jonnychipztstate"
