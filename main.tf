@@ -1,13 +1,5 @@
 terraform {
   
-  required_providers {
-    azurerm = {
-      # Specify what version of the provider we are going to utilise
-      source  = "hashicorp/azurerm"
-      version = "~>2.0"
-    }
-  }
-  
   backend "azurerm" {
     resource_group_name  = "jonnychipz-infra"
     storage_account_name = "jonnychipztstate"
