@@ -27,7 +27,7 @@ resource "azurerm_resource_group" "rg" {
   location = "West US 2"
 }
 
-# Create our Virtual Network - Jonnychipz-VNET
+# Create our Virtual Network - VNet-AzureDevOps1
 resource "azurerm_virtual_network" "vnet" {
   name                = "VNet-AzureDevOps1"
   address_space       = ["10.0.0.0/16"]
@@ -35,7 +35,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-# Create our Subnet to hold our VM - Virtual Machines
+# Create our Subnet to hold our VM - Subnet-AzureDevOps1
 resource "azurerm_subnet" "sn" {
   name                 = "Subnet-AzureDevOps1"
   resource_group_name  = azurerm_resource_group.rg.name
@@ -43,8 +43,8 @@ resource "azurerm_subnet" "sn" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-# Create our Azure Storage Account - jonnychipzsa
-resource "azurerm_storage_account" "jonnychipzsa" {
+# Create our Azure Storage Account - SA-AzureDevOps1
+resource "azurerm_storage_account" "sa" {
   name                     = "SA-AzureDevOps1"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
@@ -68,8 +68,8 @@ resource "azurerm_network_interface" "vmnic" {
   }
 }
 
-# Create our Virtual Machine - Jonnychipz-VM01
-resource "azurerm_virtual_machine" "jonnychipzvm01" {
+# Create our Virtual Machine - VM-AzureDevOps1
+resource "azurerm_virtual_machine" "vm" {
   name                  = "VM-AzureDevOps1"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
